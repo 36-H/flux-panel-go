@@ -4,6 +4,8 @@
 
 package node
 
+import "flux-panel-go/internal/model/localErr"
+
 const (
 	// 节点默认状态：启用
 	NODE_STATUS_ACTIVE = 0
@@ -29,3 +31,19 @@ const (
 	ERROR_PORT_RANGE_INVALID = "端口必须在1-65535范围内"
 	ERROR_PORT_ORDER_INVALID = "结束端口不能小于起始端口"
 )
+
+func validatePortRange(portStart, portEnd int) error {
+	if portStart < 1 || portStart > 65535 || portEnd < 1 || portEnd > 65535 {
+		return &localErr.CommonError{
+			Code:   -2,
+			ErrMsg: ERROR_PORT_RANGE_INVALID,
+		}
+	}
+	if portEnd < portStart {
+		return &localErr.CommonError{
+			Code:   -2,
+			ErrMsg: ERROR_PORT_ORDER_INVALID,
+		}
+	}
+	return nil
+}
