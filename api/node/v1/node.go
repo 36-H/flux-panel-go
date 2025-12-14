@@ -1,6 +1,10 @@
 package v1
 
-import "github.com/gogf/gf/v2/frame/g"
+import (
+	"flux-panel-go/internal/model/entity"
+
+	"github.com/gogf/gf/v2/frame/g"
+)
 
 type CreateReq struct {
 	g.Meta    `path:"/api/v1/node/create" tags:"Nodes" method:"post" summary:"创建节点"`
@@ -12,3 +16,11 @@ type CreateReq struct {
 }
 
 type CreateRes string
+
+type GetListReq struct {
+	g.Meta `path:"/api/v1/node/list" tags:"Nodes" method:"get" summary:"获取节点列表"`
+}
+
+type GetListRes struct {
+	Nodes []*entity.Node `json:"nodes"`
+}

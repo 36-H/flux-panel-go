@@ -2,7 +2,6 @@ package node
 
 import (
 	"context"
-	"fmt"
 	"time"
 
 	v1 "flux-panel-go/api/node/v1"
@@ -44,7 +43,7 @@ func validatePortRange(portStart, portEnd int) error {
 	if portStart < 1 || portStart > 65535 || portEnd < 1 || portEnd > 65535 {
 		return &localErr.CommonError{
 			Code:   -2,
-			ErrMsg: fmt.Sprintf(ERROR_PORT_RANGE_INVALID, portStart, portEnd),
+			ErrMsg: ERROR_PORT_RANGE_INVALID,
 		}
 	}
 	if portEnd < portStart {
