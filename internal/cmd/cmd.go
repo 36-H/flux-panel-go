@@ -24,7 +24,10 @@ var (
 				jwtSecret = "flux-panel-secret-key"
 			}
 			utils.InitJwtUtil(jwtSecret)
-
+			// 增加对数据库的连接检测
+			if _, err = g.DB().Query(ctx, "SELECT 1"); err != nil {
+				g.Log().Fatal(ctx, "数据库连接失败:", err)
+			}
 			s := g.Server()
 			s.Group("/", func(group *ghttp.RouterGroup) {
 				group.Middleware(middleware.ResponseHandler)
