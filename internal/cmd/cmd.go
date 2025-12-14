@@ -7,7 +7,7 @@ import (
 	"github.com/gogf/gf/v2/net/ghttp"
 	"github.com/gogf/gf/v2/os/gcmd"
 
-	"demo/internal/controller/hello"
+	"flux-panel-go/internal/logic/middleware"
 )
 
 var (
@@ -18,10 +18,7 @@ var (
 		Func: func(ctx context.Context, parser *gcmd.Parser) (err error) {
 			s := g.Server()
 			s.Group("/", func(group *ghttp.RouterGroup) {
-				group.Middleware(ghttp.MiddlewareHandlerResponse)
-				group.Bind(
-					hello.NewV1(),
-				)
+				group.Middleware(middleware.ResponseHandler)
 			})
 			s.Run()
 			return nil

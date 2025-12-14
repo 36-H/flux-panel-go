@@ -1,11 +1,11 @@
 package main
 
 import (
-	_ "demo/internal/packed"
+	_ "flux-panel-go/internal/packed"
 
 	"github.com/gogf/gf/v2/os/gctx"
 
-	"demo/internal/cmd"
+	"flux-panel-go/internal/cmd"
 )
 
 func main() {

@@ -1,4 +1,4 @@
-module demo
+module flux-panel-go
 
 go 1.23.0
 

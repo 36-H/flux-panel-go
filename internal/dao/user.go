@@ -5,7 +5,7 @@
 package dao
 
 import (
-	"demo/internal/dao/internal"
+	"flux-panel-go/internal/dao/internal"
 )
 
 // userDao is the data access object for the table user.
