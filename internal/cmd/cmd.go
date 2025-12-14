@@ -7,6 +7,7 @@ import (
 	"github.com/gogf/gf/v2/net/ghttp"
 	"github.com/gogf/gf/v2/os/gcmd"
 
+	"flux-panel-go/internal/controller/node"
 	"flux-panel-go/internal/controller/user"
 	"flux-panel-go/internal/logic/middleware"
 	"flux-panel-go/internal/utils"
@@ -33,6 +34,7 @@ var (
 				group.Middleware(middleware.ResponseHandler)
 				group.Bind(
 					user.NewV1(),
+					node.NewV1(),
 				)
 			})
 			s.Run()
