@@ -30,6 +30,9 @@ const (
 	ERROR_PORT_END_REQUIRED  = "结束端口不能为空"
 	ERROR_PORT_RANGE_INVALID = "端口必须在1-65535范围内"
 	ERROR_PORT_ORDER_INVALID = "结束端口不能小于起始端口"
+
+	// 安装命令相关消息
+	ERROR_VITE_IP_CONFIG = "请先前往网站配置中设置ip"
 )
 
 func validatePortRange(portStart, portEnd int) error {

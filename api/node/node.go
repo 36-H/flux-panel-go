@@ -15,4 +15,5 @@ type INodeV1 interface {
 	GetList(ctx context.Context, req *v1.GetListReq) (res *v1.GetListRes, err error)
 	Update(ctx context.Context, req *v1.UpdateReq) (res *v1.UpdateRes, err error)
 	Delete(ctx context.Context, req *v1.DeleteReq) (res *v1.DeleteRes, err error)
+	GetInstallCommand(ctx context.Context, req *v1.GetInstallCommandReq) (res *v1.GetInstallCommandRes, err error)
 }

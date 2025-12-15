@@ -16,3 +16,6 @@ database:
 
 jwt:
   secret: "flux-panel-secret-key"
+
+agent:
+  downloadUrl: "https://github.com/36-H/flux-panel-go/agent-install.sh"

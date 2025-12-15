@@ -46,3 +46,9 @@ type DeleteReq struct {
 }
 
 type DeleteRes string
+
+type GetInstallCommandReq struct {
+	g.Meta `path:"/api/v1/node/install-command" tags:"Nodes" method:"get" summary:"获取节点安装命令"`
+	ID     int `json:"id" v:"required#节点ID不能为空" dc:"节点ID"`
+}
+type GetInstallCommandRes string

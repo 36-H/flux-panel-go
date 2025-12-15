@@ -15,7 +15,7 @@ func (c *ControllerV1) Update(ctx context.Context, req *v1.UpdateReq) (res *v1.U
 	exist, err := dao.Node.Ctx(ctx).Where(dao.Node.Columns().Id, req.ID).Exist()
 	if err != nil || !exist {
 		return nil, &localErr.CommonError{
-			Code:   -2,
+			Code:   -1,
 			ErrMsg: ERROR_NODE_NOT_FOUND,
 		}
 	}

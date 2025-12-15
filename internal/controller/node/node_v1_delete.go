@@ -13,7 +13,7 @@ func (c *ControllerV1) Delete(ctx context.Context, req *v1.DeleteReq) (res *v1.D
 	exist, err := dao.Node.Ctx(ctx).Where(dao.Node.Columns().Id, req.ID).Exist()
 	if err != nil || !exist {
 		return nil, &localErr.CommonError{
-			Code:   -2,
+			Code:   -1,
 			ErrMsg: ERROR_NODE_NOT_FOUND,
 		}
 	}
