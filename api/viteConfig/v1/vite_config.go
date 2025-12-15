@@ -27,3 +27,11 @@ type UpdateViteConfigsReq struct {
 }
 
 type UpdateViteConfigsRes string
+
+type UpdateSingleViteConfigReq struct {
+	g.Meta `path:"/api/v1/config" tags:"Vite Config" method:"put" summary:"更新指定网站配置"`
+	Name   string `json:"name" v:"required#请输入配置名称" dc:"配置名称"`
+	Value  string `json:"value" v:"required#请输入配置值" dc:"配置值"`
+}
+
+type UpdateSingleViteConfigRes string
