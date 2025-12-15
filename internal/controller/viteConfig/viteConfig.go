@@ -4,4 +4,5 @@
 
 package viteConfig
 
-const ERROR_GET_VITE_CONFIGS_FAILED = "获取网站配置失败"
+const ErrorGetViteConfigsFailed = "获取网站配置失败"
+const ErrorConfigNotFound = "网站配置不存在"

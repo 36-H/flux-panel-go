@@ -12,4 +12,5 @@ import (
 
 type IViteConfigV1 interface {
 	GetViteConfigs(ctx context.Context, req *v1.GetViteConfigsReq) (res *v1.GetViteConfigsRes, err error)
+	GetViteConfig(ctx context.Context, req *v1.GetViteConfigReq) (res *v1.GetViteConfigRes, err error)
 }

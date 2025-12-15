@@ -15,7 +15,7 @@ func (c *ControllerV1) GetViteConfigs(ctx context.Context, req *v1.GetViteConfig
 	if err != nil {
 		return nil, &localErr.CommonError{
 			Code:   -1,
-			ErrMsg: ERROR_GET_VITE_CONFIGS_FAILED,
+			ErrMsg: ErrorGetViteConfigsFailed,
 		}
 	}
 	configMap := make(map[string]string)

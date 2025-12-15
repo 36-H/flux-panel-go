@@ -1,6 +1,8 @@
 package v1
 
 import (
+	"flux-panel-go/internal/model/entity"
+
 	"github.com/gogf/gf/v2/frame/g"
 )
 
@@ -9,3 +11,12 @@ type GetViteConfigsReq struct {
 }
 
 type GetViteConfigsRes map[string]string
+
+type GetViteConfigReq struct {
+	g.Meta `path:"/api/v1/config" tags:"Vite Config" method:"get" summary:"获取指定网站配置"`
+	Name   string `json:"name" v:"required#请输入配置名称" dc:"配置名称"`
+}
+
+type GetViteConfigRes struct {
+	Config *entity.ViteConfig `json:"config"`
+}
