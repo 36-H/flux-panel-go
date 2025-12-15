@@ -39,3 +39,10 @@ type UpdateReq struct {
 }
 
 type UpdateRes string
+
+type DeleteReq struct {
+	g.Meta `path:"/api/v1/node/delete" tags:"Nodes" method:"delete" summary:"删除节点"`
+	ID     int `json:"id" v:"required#节点ID不能为空" dc:"节点ID"`
+}
+
+type DeleteRes string
