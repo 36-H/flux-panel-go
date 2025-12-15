@@ -3,7 +3,7 @@
 gfcli:
   gen:
     dao:
-      - link: "mysql:gost:RKTiMAwQDmtEp5hF@tcp(1.12.53.136:63306)/gost"
+      - link: "mysql:root:12345678@tcp(127.0.0.1:3306)/test"
         descriptionTag: true
 
   docker:
