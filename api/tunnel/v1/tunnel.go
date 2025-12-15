@@ -1,6 +1,8 @@
 package v1
 
 import (
+	"flux-panel-go/internal/model/entity"
+
 	"github.com/gogf/gf/v2/frame/g"
 )
 
@@ -19,3 +21,11 @@ type CreateReq struct {
 }
 
 type CreateRes string
+
+type GetListReq struct {
+	g.Meta `path:"/api/v1/tunnel/list" method:"get" summary:"获取隧道列表"`
+}
+
+type GetListRes struct {
+	Tunnels []*entity.Tunnel `json:"tunnels"`
+}
