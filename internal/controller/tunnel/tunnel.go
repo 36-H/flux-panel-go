@@ -37,6 +37,8 @@ const (
 	ErrorDeleteMsg           = "隧道删除失败"
 	ErrorTunnelNotFound      = "隧道不存在"
 	ErrorTunnelNameExists    = "隧道名称已存在"
+	ErrorTunnelUpdateFailed  = "隧道更新失败"
+	SuccessUpdateMsg         = "隧道更新成功"
 	ErrorInNodeNotFound      = "入口节点不存在"
 	ErrorOutNodeNotFound     = "出口节点不存在"
 	ErrorOutNodeRequired     = "出口节点不能为空"
