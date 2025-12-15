@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"context"
+	"flux-panel-go/internal/controller/tunnel"
 	"flux-panel-go/internal/controller/viteConfig"
 
 	"github.com/gogf/gf/v2/frame/g"
@@ -37,6 +38,7 @@ var (
 					user.NewV1(),
 					node.NewV1(),
 					viteConfig.NewV1(),
+					tunnel.NewV1(),
 				)
 			})
 			s.Run()
