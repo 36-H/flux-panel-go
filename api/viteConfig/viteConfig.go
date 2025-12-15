@@ -1,0 +1,15 @@
+// =================================================================================
+// Code generated and maintained by GoFrame CLI tool. DO NOT EDIT.
+// =================================================================================
+
+package viteConfig
+
+import (
+	"context"
+
+	"flux-panel-go/api/viteConfig/v1"
+)
+
+type IViteConfigV1 interface {
+	GetViteConfigs(ctx context.Context, req *v1.GetViteConfigsReq) (res *v1.GetViteConfigsRes, err error)
+}

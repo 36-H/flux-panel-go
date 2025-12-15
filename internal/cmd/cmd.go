@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"context"
+	"flux-panel-go/internal/controller/viteConfig"
 
 	"github.com/gogf/gf/v2/frame/g"
 	"github.com/gogf/gf/v2/net/ghttp"
@@ -35,6 +36,7 @@ var (
 				group.Bind(
 					user.NewV1(),
 					node.NewV1(),
+					viteConfig.NewV1(),
 				)
 			})
 			s.Run()
