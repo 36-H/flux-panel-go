@@ -15,7 +15,7 @@ func (c *ControllerV1) GetInstallCommand(ctx context.Context, req *v1.GetInstall
 	if err != nil || !exist {
 		return nil, &localErr.CommonError{
 			Code:   -1,
-			ErrMsg: ERROR_NODE_NOT_FOUND,
+			ErrMsg: ErrorNodeNotFound,
 		}
 	}
 	node := new(entity.Node)
@@ -23,7 +23,7 @@ func (c *ControllerV1) GetInstallCommand(ctx context.Context, req *v1.GetInstall
 	if err != nil {
 		return nil, &localErr.CommonError{
 			Code:   -1,
-			ErrMsg: ERROR_NODE_NOT_FOUND,
+			ErrMsg: ErrorNodeNotFound,
 		}
 	}
 	// 2. 构建安装命令
@@ -42,7 +42,7 @@ func buildInstallCommand(node *entity.Node, ctx context.Context) (string, error)
 	if err != nil {
 		return "", &localErr.CommonError{
 			Code:   -1,
-			ErrMsg: ERROR_VITE_IP_CONFIG,
+			ErrMsg: ErrorViteIpConfig,
 		}
 	}
 	// TODO 从配置中获取下载URL

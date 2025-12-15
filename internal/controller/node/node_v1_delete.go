@@ -14,7 +14,7 @@ func (c *ControllerV1) Delete(ctx context.Context, req *v1.DeleteReq) (res *v1.D
 	if err != nil || !exist {
 		return nil, &localErr.CommonError{
 			Code:   -1,
-			ErrMsg: ERROR_NODE_NOT_FOUND,
+			ErrMsg: ErrorNodeNotFound,
 		}
 	}
 	// TODO 2. 检查节点是否有正在运行的隧道
@@ -24,9 +24,9 @@ func (c *ControllerV1) Delete(ctx context.Context, req *v1.DeleteReq) (res *v1.D
 	if err != nil {
 		return nil, &localErr.CommonError{
 			Code:   -1,
-			ErrMsg: ERROR_DELETE_MSG,
+			ErrMsg: ErrorDeleteMsg,
 		}
 	}
-	r := v1.DeleteRes(SUCCESS_DELETE_MSG)
+	r := v1.DeleteRes(SuccessDeleteMsg)
 	return &r, nil
 }

@@ -24,15 +24,15 @@ func (c *ControllerV1) Create(ctx context.Context, req *v1.CreateReq) (res *v1.C
 		PortSta:     req.PortSta,
 		PortEnd:     req.PortEnd,
 		Secret:      secret,
-		Status:      NODE_STATUS_ACTIVE,
+		Status:      NodeStatusActive,
 		CreatedTime: time.Now().UnixMilli(),
 		UpdatedTime: time.Now().UnixMilli(),
 	}).Save()
 	if err == nil {
-		r := v1.CreateRes(SUCCESS_CREATE_MSG)
+		r := v1.CreateRes(SuccessCreateMsg)
 		res = &r
 	} else {
-		r := v1.CreateRes(ERROR_CREATE_MSG)
+		r := v1.CreateRes(ErrorCreateMsg)
 		res = &r
 	}
 	return

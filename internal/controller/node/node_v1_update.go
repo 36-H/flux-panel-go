@@ -16,7 +16,7 @@ func (c *ControllerV1) Update(ctx context.Context, req *v1.UpdateReq) (res *v1.U
 	if err != nil || !exist {
 		return nil, &localErr.CommonError{
 			Code:   -1,
-			ErrMsg: ERROR_NODE_NOT_FOUND,
+			ErrMsg: ErrorNodeNotFound,
 		}
 	}
 	//1.1 如果节点在线 且传入更新的 http/tls/socks 任意一项与数据库不一致，则通过 WS 通知节点更新设置
@@ -38,9 +38,9 @@ func (c *ControllerV1) Update(ctx context.Context, req *v1.UpdateReq) (res *v1.U
 	if err != nil {
 		return nil, &localErr.CommonError{
 			Code:   -1,
-			ErrMsg: ERROR_UPDATE_MSG,
+			ErrMsg: ErrorUpdateMsg,
 		}
 	}
-	r := v1.UpdateRes(SUCCESS_UPDATE_MSG)
+	r := v1.UpdateRes(SuccessUpdateMsg)
 	return &r, nil
 }

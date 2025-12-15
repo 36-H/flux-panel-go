@@ -8,44 +8,44 @@ import "flux-panel-go/internal/model/localErr"
 
 const (
 	// 节点默认状态：启用
-	NODE_STATUS_ACTIVE = 0
+	NodeStatusActive = 0
 
 	// 成功响应消息
-	SUCCESS_CREATE_MSG = "节点创建成功"
-	SUCCESS_UPDATE_MSG = "节点更新成功"
-	SUCCESS_DELETE_MSG = "节点删除成功"
+	SuccessCreateMsg = "节点创建成功"
+	SuccessUpdateMsg = "节点更新成功"
+	SuccessDeleteMsg = "节点删除成功"
 
 	// 错误响应消息
-	ERROR_CREATE_MSG     = "节点创建失败"
-	ERROR_UPDATE_MSG     = "节点更新失败"
-	ERROR_DELETE_MSG     = "节点删除失败"
-	ERROR_NODE_NOT_FOUND = "节点不存在"
+	ErrorCreateMsg    = "节点创建失败"
+	ErrorUpdateMsg    = "节点更新失败"
+	ErrorDeleteMsg    = "节点删除失败"
+	ErrorNodeNotFound = "节点不存在"
 
 	// 隧道使用检查相关消息
-	ERROR_IN_NODE_IN_USE  = "该节点还有 %d 个隧道作为入口节点在使用，请先删除相关隧道"
-	ERROR_OUT_NODE_IN_USE = "该节点还有 %d 个隧道作为出口节点在使用，请先删除相关隧道"
+	ErrorInNodeInUse  = "该节点还有 %d 个隧道作为入口节点在使用，请先删除相关隧道"
+	ErrorOutNodeInUse = "该节点还有 %d 个隧道作为出口节点在使用，请先删除相关隧道"
 
 	// 端口范围验证相关消息
-	ERROR_PORT_STA_REQUIRED  = "起始端口不能为空"
-	ERROR_PORT_END_REQUIRED  = "结束端口不能为空"
-	ERROR_PORT_RANGE_INVALID = "端口必须在1-65535范围内"
-	ERROR_PORT_ORDER_INVALID = "结束端口不能小于起始端口"
+	ErrorPortStaRequired  = "起始端口不能为空"
+	ErrorPortEndRequired  = "结束端口不能为空"
+	ErrorPortRangeInvalid = "端口必须在1-65535范围内"
+	ErrorPortOrderInvalid = "结束端口不能小于起始端口"
 
 	// 安装命令相关消息
-	ERROR_VITE_IP_CONFIG = "请先前往网站配置中设置ip"
+	ErrorViteIpConfig = "请先前往网站配置中设置ip"
 )
 
 func validatePortRange(portStart, portEnd int) error {
 	if portStart < 1 || portStart > 65535 || portEnd < 1 || portEnd > 65535 {
 		return &localErr.CommonError{
 			Code:   -2,
-			ErrMsg: ERROR_PORT_RANGE_INVALID,
+			ErrMsg: ErrorPortRangeInvalid,
 		}
 	}
 	if portEnd < portStart {
 		return &localErr.CommonError{
 			Code:   -2,
-			ErrMsg: ERROR_PORT_ORDER_INVALID,
+			ErrMsg: ErrorPortOrderInvalid,
 		}
 	}
 	return nil
