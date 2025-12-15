@@ -6,3 +6,6 @@ package viteConfig
 
 const ErrorGetViteConfigsFailed = "获取网站配置失败"
 const ErrorConfigNotFound = "网站配置不存在"
+const ErrorConfigsRequired = "请输入配置"
+const ErrorUpdateViteConfigsFailed = "更新网站配置失败"
+const SuccessUpdateViteConfigs = "更新网站配置成功"

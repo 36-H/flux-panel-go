@@ -20,3 +20,10 @@ type GetViteConfigReq struct {
 type GetViteConfigRes struct {
 	Config *entity.ViteConfig `json:"config"`
 }
+
+type UpdateViteConfigsReq struct {
+	g.Meta  `path:"/api/v1/config" tags:"Vite Config" method:"put" summary:"更新网站配置"`
+	Configs map[string]string `json:"configs" v:"required#请输入配置" dc:"配置"`
+}
+
+type UpdateViteConfigsRes string
